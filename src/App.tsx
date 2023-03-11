@@ -50,9 +50,9 @@ function App() {
       </div>
     );
   }
-  const debounce = (func: number) => {
+  const debounce = (func: (value: string) => void) => {
     let timer: any;
-    return function (...args) {
+    return function (this: void, ...args: any) {
       const context = this;
       if (timer) clearTimeout(timer);
       timer = setTimeout(() => {
