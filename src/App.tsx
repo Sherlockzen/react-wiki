@@ -1,4 +1,4 @@
-import {useCallback, useState, useDeferredValue} from 'react'
+import {useCallback, useState} from 'react'
 import reactLogo from './assets/react.svg'
 import './App.css'
 
@@ -50,7 +50,7 @@ function App() {
 
 
   const debounce = (func:number) => {
-      let timer;
+      let timer: any;
       return function (...args) {
           const context = this;
           if (timer) clearTimeout(timer);
